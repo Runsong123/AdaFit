@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/h3d-net/assets/css/style.css?v=08d2b8ce5255e34ad72bc397316f42569880e1ab">
+    <title>AdaFit: Rethinking Learning-based Normal Estimation on Point Clouds
+</title>
+  </head>
+  <body>
+    <header class="page-header" role="banner">
+      <h1 class="project-name">AdaFit: Rethinking Learning-based Normal Estimation on Point Clouds
+</h1>
+      <div class="btn-group-flex">
+        <a href="" class="btn"><img src="assets/images/icons/paper.svg" class="icon-paper"/>Paper</a>
+        <a href="" class="btn"><img src="assets/images/icons/dataset.svg" class="icon-dataset"/>H3DS dataset</a>
+      </div>
+      <div class="authors">
+        <p class="authors__name">Runsong zhu<sup>1</sup></p>,
+        <p class="authors__name">Liu Yuan<sup>2</sup></p>,
+        <p class="authors__name">Zhen Dong<sup>1</sup></p>,
+        <p class="authors__name">Tengping jiang<sup>1</sup></p>,
+        <p class="authors__name">Yuan wang<sup>1</sup></p>,
+        <p class="authors__name">Wenping Wang<sup>2</sup></p>,
+        <p class="authors__name">Bisheng Yang<sup>1</sup></p>
+      </div>
+      <div class="affiliations">
+        <p class="affiliation__name"><sup>1</sup>Wuhan University</p>,
+        <p class="affiliation__name"><sup>2</sup>the Universitat of Hong Kong</p>,
+        <!-- <p class="affiliation__name"><sup>3</sup>Institut de Robòtica i Informàtica Industrial, CSIC-UPC</p> -->
+      </div>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      <p><img src="/h3d-net/assets/images/teaser.png" alt="" /></p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>This paper presents a neural network for robust normal estimation on point clouds, named AdaFit, that can deal with point clouds with noise and density variations. Existing works use a network to learn point-wise weights for weighted least squares surface fitting to estimate the normal, which has difficulty in finding accurate normals in complex regions or containing noisy points. By analyzing the step of weighted least squares surface fitting, we find that it is hard to determine the polynomial order of the fitting surface and the fitting surface is sensitive to outliers. To address these problems, we propose a simple yet effective solution that adds an additional offset prediction to improve the quality of normal estimation. Furthermore, in order to take advantage of points from different neighborhood sizes, a novel Cascaded Scale Aggregation layer is proposed to help the network predict more accurate point-wise offsets and weights. Extensive experiments demonstrate that AdaFit achieves state-of-the-art performance on both the synthetic PCPNet dataset and the real-word SceneNN dataset.</p>
+
+<h2 id="method">Method</h2>
+
+<p>H3D-Net is a neural architecture that reconstructs high-quality 3D human heads from a few input images with associated masks and camera poses. At training time, a <a href="https://arxiv.org/abs/1901.05103">DeepSDF</a>-like model (red) is trained to capture the distribution of human heads from raw 3D data using a Signed Distance Function (SDF) as representation. At test time, this model is connected with a coordinate-based rendering network (blue), similarly to <a href="https://arxiv.org/abs/2003.09852">IDR</a>, that estimates the emited radiance for each 3D surface point, enabling direct supervision in the image domain. During the 3D reconstruction process, the prior model keeps the estimated surface within the space of plausible solutions and it is eventually unfrozen to capture fine details.</p>
+
+<p><img src="/h3d-net/assets/images/method.png" alt="" /></p>
+
+<h2 id="results">Results</h2>
+
+<p>The proposed method performs well in both few-shot and many-shot scenarios, outperforming model-based methods like <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_MVF-Net_Multi-View_3D_Face_Morphable_Model_Regression_CVPR_2019_paper.pdf">MVFNet</a> and <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Bai_Deep_Facial_Non-Rigid_Multi-View_Stereo_CVPR_2020_paper.pdf">DFNRMVS</a> in 3D face reconstruction from only 3 views, and model-free approaches like <a href="https://arxiv.org/abs/2003.09852">IDR</a> in full head reconstruction.</p>
+
+<p>Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf">MRL model</a>, which minimizes the reprojection error. The masks have been estimated using <a href="https://arxiv.org/pdf/2005.09007.pdf">U2Net</a> and then have been manually refined.</p>
+
+<p align="center">
+  <img src="assets/images/3-views-1.gif" width="350" />
+  <img src="assets/images/3-views-2.gif" width="350" />
+</p>
+
+<p>We also provide a qualitative and quantitative comparison with respect to <a href="https://arxiv.org/abs/2003.09852">IDR</a> varying the number of available views. Note how H3D-Net effectively finds realistic and detailed solutions in both few-shot and many-shot scenarios.</p>
+
+<p align="center">
+  <img src="assets/images/h3dnet-idr.gif" />
+</p>
+
+<h2 id="related-work">Related work</h2>
+
+<ol>
+  <li><a href="https://arxiv.org/abs/1901.05103">DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation (2019)</a></li>
+  <li><a href="https://arxiv.org/abs/2002.10099">Implicit Geometric Regularization for Learning Shapes (2020)</a></li>
+  <li><a href="https://arxiv.org/abs/2003.09852">Multiview Neural Surface Reconstruction with Implicit Lighting and Material (2020)</a></li>
+</ol>
+
+<h2 id="bibtex">BibTeX</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@article{ramon2021h3dnet
+  author    = {Ramon, Eduard and Triginer, Gil and Escur, Janna and Pumarola, Albert and Garcia, Jaime and Giro-i-Nieto, Xavier and Moreno-Noguer, Francesc},
+  title     = {H3D-Net: Few-Shot High-Fidelity 3D Head Reconstruction},
+  journal   = {arXiv preprint arXiv:2107.12512},
+  year      = {2021},
+}
+</code></pre></div></div>
+
+
+      <footer class="site-footer">
+        © Crisalix 2021
+      </footer>
+    </main>
+  </body>
+</html>
