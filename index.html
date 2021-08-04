@@ -49,7 +49,7 @@
 
 <h2 id="results">Results</h2>
 
-<p>The proposed method performs well in both few-shot and many-shot scenarios, outperforming model-based methods like <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Wu_MVF-Net_Multi-View_3D_Face_Morphable_Model_Regression_CVPR_2019_paper.pdf">MVFNet</a> and <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Bai_Deep_Facial_Non-Rigid_Multi-View_Stereo_CVPR_2020_paper.pdf">DFNRMVS</a> in 3D face reconstruction from only 3 views, and model-free approaches like <a href="https://arxiv.org/abs/2003.09852">IDR</a> in full head reconstruction.</p>
+<p>The proposed method performs SOTA in PCPNet dataset and real-word SceneNN datasets.</p>
 
 <p>Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf">MRL model</a>, which minimizes the reprojection error. The masks have been estimated using <a href="https://arxiv.org/pdf/2005.09007.pdf">U2Net</a> and then have been manually refined.</p>
 
@@ -67,9 +67,9 @@
 <h2 id="related-work">Related work</h2>
 
 <ol>
-  <li><a href="https://arxiv.org/abs/1901.05103">DeepSDF: Learning Continuous Signed Distance Functions for Shape Representation (2019)</a></li>
-  <li><a href="https://arxiv.org/abs/2002.10099">Implicit Geometric Regularization for Learning Shapes (2020)</a></li>
-  <li><a href="https://arxiv.org/abs/2003.09852">Multiview Neural Surface Reconstruction with Implicit Lighting and Material (2020)</a></li>
+  <li><a href="https://arxiv.org/abs/1710.04954">PCPNET: Learning Local Shape Properties from Raw Point Clouds (2018)</a></li>
+  <li><a href="https://arxiv.org/abs/1904.07172">Deep Iterative Surface Normal Estimation (2020)</a></li>
+  <li><a href="https://arxiv.org/abs/2003.10826">DeepFit: 3D Surface Fitting via Neural Network Weighted Least Squares (2020)</a></li>
 </ol>
 
 <h2 id="bibtex">BibTeX</h2>
