@@ -41,21 +41,21 @@
 
 <p>This paper presents a neural network for robust normal estimation on point clouds, named AdaFit, that can deal with point clouds with noise and density variations. Existing works use a network to learn point-wise weights for weighted least squares surface fitting to estimate the normal, which has difficulty in finding accurate normals in complex regions or containing noisy points. By analyzing the step of weighted least squares surface fitting, we find that it is hard to determine the polynomial order of the fitting surface and the fitting surface is sensitive to outliers. To address these problems, we propose a simple yet effective solution that adds an additional offset prediction to improve the quality of normal estimation. Furthermore, in order to take advantage of points from different neighborhood sizes, a novel Cascaded Scale Aggregation layer is proposed to help the network predict more accurate point-wise offsets and weights. Extensive experiments demonstrate that AdaFit achieves state-of-the-art performance on both the synthetic PCPNet dataset and the real-word SceneNN dataset.</p>
 
-<h2 id="method">Method</h2>
-
-<p>H3D-Net is a neural architecture that reconstructs high-quality 3D human heads from a few input images with associated masks and camera poses. At training time, a <a href="https://arxiv.org/abs/1901.05103">DeepSDF</a>-like model (red) is trained to capture the distribution of human heads from raw 3D data using a Signed Distance Function (SDF) as representation. At test time, this model is connected with a coordinate-based rendering network (blue), similarly to <a href="https://arxiv.org/abs/2003.09852">IDR</a>, that estimates the emited radiance for each 3D surface point, enabling direct supervision in the image domain. During the 3D reconstruction process, the prior model keeps the estimated surface within the space of plausible solutions and it is eventually unfrozen to capture fine details.</p>
+<h2 id="Introduction">Method</h2>
+<p>Given the input point cloud, our target is to estimate a normal for every point.</p>
 
 <p><img src="/h3d-net/assets/images/method.png" alt="" /></p>
 
 <h2 id="results">Results</h2>
 
-<p>The proposed method performs SOTA in PCPNet dataset and real-word SceneNN datasets.</p>
+<p>Results for PCPNet dataset and real-word SceneNN datasets.</p>
 
-<p>Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf">MRL model</a>, which minimizes the reprojection error. The masks have been estimated using <a href="https://arxiv.org/pdf/2005.09007.pdf">U2Net</a> and then have been manually refined.</p>
+
+<!-- <p>Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf">MRL model</a>, which minimizes the reprojection error. The masks have been estimated using <a href="https://arxiv.org/pdf/2005.09007.pdf">U2Net</a> and then have been manually refined.</p> -->
 
 <p align="center">
-  <img src="assets/images/3-views-1.gif" width="350" />
-  <img src="assets/images/3-views-2.gif" width="350" />
+  <img src="./images/PCPNet_error_map.png" width="700" />
+  <!-- <img src="assets/images/3-views-2.gif" width="350" /> -->
 </p>
 
 <p>We also provide a qualitative and quantitative comparison with respect to <a href="https://arxiv.org/abs/2003.09852">IDR</a> varying the number of available views. Note how H3D-Net effectively finds realistic and detailed solutions in both few-shot and many-shot scenarios.</p>
