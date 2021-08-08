@@ -21,10 +21,10 @@
       </div>
       <div class="authors">
         <p class="authors__name">Runsong zhu *<sup>1</sup></p>,
-        <p class="authors__name">Yuan Liu *(equal contribution)<sup>2</sup></p>,
+        <p class="authors__name">Yuan Liu * (equal contribution)<sup>2</sup></p>,
         <p class="authors__name">Zhen Dong<sup>1</sup></p>,
-        <p class="authors__name">Tengping jiang<sup>1</sup></p>,
-        <p class="authors__name">Yuan wang<sup>1</sup></p>,
+        <p class="authors__name">Tengping Jiang<sup>1</sup></p>,
+        <p class="authors__name">Yuan Wang<sup>1</sup></p>,
         <p class="authors__name">Wenping Wang<sup>2</sup></p>,
         <p class="authors__name">Bisheng Yang<sup>1</sup></p>
       </div>
@@ -54,12 +54,27 @@
 
 <!-- <p>Next, we show full head 3D reconstructions from only 3 input images. In these examples, the camera poses have been regressed using a pre-trained <a href="https://openaccess.thecvf.com/content_ICCVW_2019/papers/GMDL/Ramon_Hyperparameter-Free_Losses_for_Model-Based_Monocular_Reconstruction_ICCVW_2019_paper.pdf">MRL model</a>, which minimizes the reprojection error. The masks have been estimated using <a href="https://arxiv.org/pdf/2005.09007.pdf">U2Net</a> and then have been manually refined.</p> -->
 
-<p align="center">
+<figure align="center">
+  <p align="center"><img src="./images/PCPNet_error_map.png" width="700" />
+  <figcaption> a). Errors of normal estimation on the PCPNet dataset.
+  </figcaption>
+  </p>
+</figure>
+
+
+<figure align="center">
+  <p align="center"><img src="./images/indoor.png" width="700" />
+  <figcaption> b). Errors of normal estimation on the SceneNN dataset.
+  </figcaption>
+  </p>
+</figure>
+
+<!-- <p align="center">
   <img src="./images/PCPNet_error_map.png" width="700" />
 </p>
 <p align="center">
     <img src="./images/indoor.png" width="700" />
-</p>
+</p> -->
 <!-- <p>We also provide a qualitative and quantitative comparison with respect to <a href="https://arxiv.org/abs/2003.09852">IDR</a> varying the number of available views. Note how H3D-Net effectively finds realistic and detailed solutions in both few-shot and many-shot scenarios.</p>
 
 <p align="center">
@@ -69,15 +84,42 @@
 
 
 <!-- <h2 id="downstreams target">downstreams target </h2> -->
-<h2>Surface reconstruction</h2>
+
+
+
+<h2>Applcation</h2>
+
+<figure align="center">
+  <p align="center"><img src="./images/Surface.png" width="700" />
+  <figcaption> a). The comparison of the Poisson surface reconstruction using the estimated normals from different methods.
+  </figcaption>
+  </p>
+</figure>
+
+
+<figure align="center">
+  <p align="center">
+    <img src="./images/denoise.png" width="700" />
+    <figcaption> b). Qualitative results of point cloud denoising. The first row shows the denoised point clouds while the second row shows the corresponding reconstructed surfaces.</figcaption>
+    <!-- <h3>denoise</h3> -->
+  </figcaption>
+  </p>
+</figure>
+
+
+
+<!-- 
 <p align="center">
   <img src="./images/Surface.png" width="700" />
-</p>
+  <div style="text-align:center"><p3>The comparison of the Poisson surface reconstruction using the estimated normals from different methods.</p3></div>
+</p> -->
 
-<h2>Denoising</h2>
-<p align="center">
+<!-- <h2>Denoising</h2> -->
+<!-- <p align="center">
     <img src="./images/denoise.png" width="700" />
-</p>
+    <div style="text-align:center"><p5>Qualitative results of point cloud denoising. The first row shows the denoised point clouds while the second row shows the corresponding reconstructed surfaces.</p5></div>
+    <!-- <h3>denoise</h3> -->
+<!-- </p> --> 
 
 <h2 id="Short video">Short video</h2>
 <p align="center">
