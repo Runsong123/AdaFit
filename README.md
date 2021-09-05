@@ -26,7 +26,7 @@ we conduct the experiment in the following setting:
 - urllib3 v1.25.8
 
 
-### How to use the code
+## How to use the code
 
 
 ### Data praparation
@@ -54,7 +54,7 @@ python train_n_est_multi_scale.py
 ## Acknowledgement
 The code is heavily based on [DeepFit](https://github.com/sitzikbs/DeepFit).
 
-If you find our work useful in your research, please cite our paper and DeepFit:
+If you find our work useful in your research, please cite our paper. please also cite the DeepFit paper.
 
 ```
 @article{zhu2021adafit,
