@@ -9,7 +9,7 @@ Under construction ... -->
 
 **[Project Page](https://runsong123.github.io/AdaFit/) | [Arxiv](https://arxiv.org/abs/2108.05836) **
 
-Runsong Zhu¹, Yuan Liu, Zhen Dong, Tengping jiang, Yuan Wang, Wenping Wang, Bisheng Yang. 
+Runsong Zhu¹, Yuan Liu², Zhen Dong¹, Tengping jiang¹, Yuan Wang¹, Wenping Wang³, Bisheng Yang¹. 
 
 ¹Wuhan University + ²The University of Hong Kong + ³Texas A&M University.
 
