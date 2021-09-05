@@ -78,7 +78,7 @@ Note that, the difference between single-scale verison of our AdaFit and multi-s
 ## Acknowledgement
 The code is heavily based on [DeepFit](https://github.com/sitzikbs/DeepFit).
 
-If you find our work useful in your research, please cite our paper. please also cite the DeepFit paper.
+If you find our work useful in your research, please cite our paper. And please also cite the DeepFit paper.
 
 ```
 @article{zhu2021adafit,
