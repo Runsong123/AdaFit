@@ -43,7 +43,7 @@ you need to download PCPNet dataset and place it in ```./data/```
 python run_AdaFit_single_experiment_single_scale.py
 ```
 
-Note that, the difference between single-scale verison of our AdaFit and DeepFit is the offset-learning part, which we need to add a little line code.:
+Note that, the difference between single-scale verison of our AdaFit and DeepFit is the offset-learning part, which we need to add the following code.:
 
 ```
 # parameter
