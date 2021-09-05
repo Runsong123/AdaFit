@@ -43,13 +43,33 @@ you need to download PCPNet dataset and place it in ```./data/```
 python run_AdaFit_single_experiment_single_scale.py
 ```
 
+Note that, the difference between single-scale verison of our AdaFit and DeepFit is the offset-learning part, which we need to add a little line code.:
+
+```
+# parameter
+
+self.conv_bias = nn.Conv1d(128, 3, 1)
+
+# train /test 
+
+...
+bias =  self.conv_bias(x)
+bias[:,:,0] = 0
+points = points + bias
+...
+
+```
+
+
+
 ### multi-scale version (Train + Test on PCPNet):
+
 
 ```
 python run_AdaFit_single_experiment_multi_scale.py
 ```
 
-
+Note that, the difference between single-scale verison of our AdaFit and multi-scale verison of our AdaFit is the CAS layer.
 
 
 
