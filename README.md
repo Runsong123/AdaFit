@@ -37,13 +37,13 @@ we conduct the experiment in the following setting:
 
 you need to download PCPNet dataset and place it in ```./data/```
 
-### single-scale version (Train + Test on PCPNet):
+### single-scale AdaFit (Train + Test on PCPNet):
 
 ```
 python run_AdaFit_single_experiment_single_scale.py
 ```
 
-Note that, the difference between single-scale verison of our AdaFit and DeepFit is the offset-learning part, which we need to add the following code.:
+Note that, the difference between single-scale verison of our AdaFit and DeepFit is the offset-learning part, which you only need to add the following code.:
 
 ```
 # parameter
@@ -62,16 +62,12 @@ points = points + bias
 
 
 
-### multi-scale version (Train + Test on PCPNet):
+### AdaFit (Train + Test on PCPNet):
 
 
 ```
 python run_AdaFit_single_experiment_multi_scale.py
 ```
-
-Note that, the difference between single-scale verison of our AdaFit and multi-scale verison of our AdaFit is the Cascaded Scale Aggregation (CSA) layer.
-
-
 
 
 
