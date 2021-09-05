@@ -40,13 +40,13 @@ you need to download PCPNet dataset and place it in ```./data/```
 ### single-scale version (Train + Test on PCPNet):
 
 ```
-python train_n_est_single_scale.py
+python run_AdaFit_single_experiment_single_scale.py
 ```
 
 ### multi-scale version (Train + Test on PCPNet):
 
 ```
-python train_n_est_multi_scale.py
+python run_AdaFit_single_experiment_multi_scale.py
 ```
 
 
