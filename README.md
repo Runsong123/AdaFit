@@ -69,7 +69,7 @@ points = points + bias
 python run_AdaFit_single_experiment_multi_scale.py
 ```
 
-Note that, the difference between single-scale verison of our AdaFit and multi-scale verison of our AdaFit is the CAS layer.
+Note that, the difference between single-scale verison of our AdaFit and multi-scale verison of our AdaFit is the Cascaded Scale Aggregation (CSA) layer.
 
 
 
