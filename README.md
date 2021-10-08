@@ -7,7 +7,7 @@ Under construction ... -->
 
 # AdaFit: Rethinking Learning-based Normal Estimation on Point Clouds (ICCV 2021 oral)
 
-**[Project Page](https://runsong123.github.io/AdaFit/) | [Arxiv](https://arxiv.org/abs/2108.05836) |  [Video](https://youtu.be/IEjB_ea7-KE) | [Poster](https://runsong123.github.io/AdaFit/media/AdaFit_poster.pdf) | **
+**[Project Page](https://runsong123.github.io/AdaFit/) | [Arxiv](https://arxiv.org/abs/2108.05836) |  [Video](https://youtu.be/IEjB_ea7-KE) | [Poster](https://runsong123.github.io/AdaFit/media/AdaFit_poster.pdf) |**
 
 Runsong Zhu¹, Yuan Liu², Zhen Dong¹, Tengping jiang¹, Yuan Wang¹, Wenping Wang³, Bisheng Yang¹. 
 
